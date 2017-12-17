@@ -2013,7 +2013,8 @@ window_box(int argc, VALUE *argv, VALUE self)
     rb_scan_args(argc, argv, "21", &vert, &hor, &corn);
 
     GetWINDOW(self, winp);
-    box(winp->window, NUM2INT(vert), NUM2INT(hor));
+    //box(winp->window, NUM2CH(vert), NUM2CH(hor));
+    box(winp->window, vert, hor);
 
     if (!NIL_P(corn)) {
 	int cur_x, cur_y, x, y;
